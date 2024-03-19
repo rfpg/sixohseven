@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>six oh seven</title>
+<style>
+  body { 
+    font-family: 'Courier New', monospace; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column;
+    height: 100vh; 
+    background-color: #333; 
+    color: #e00; 
+    text-shadow: 0 0 5px #ff0000; 
+  }
+  #image-container {
+    margin-bottom: 20px;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #e00;
+    border-radius: 10px;
+  }
+  #countdown { 
+    font-size: 4rem; 
+    border: 2px solid #e00; 
+    padding: 20px; 
+    border-radius: 10px; 
+    background-color: #111; 
+  }
+</style>
+</head>
+<body>
+<div id="image-container">
+  <img src="image.jpg" alt="Doomsday Image">
+</div>
+<div id="countdown">
+</div>
+
+<script>
+function updateCountdown() {
+  const now = new Date().getTime();
+  const targetDate = new Date("2024-05-20T00:00:00").getTime();
+  const distance = targetDate - now;
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s left until May 20, 2024";
+
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("countdown").innerHTML = "THE END IS HERE";
+  }
+}
+
+// Update the count down every 1 second
+const x = setInterval(updateCountdown, 1000);
+
+updateCountdown(); // Initial call to display countdown immediately
+</script>
+
+</body>
+</html>
