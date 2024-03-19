@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,17 +5,25 @@
 <style>
   body { 
     font-family: 'Courier New', monospace; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    flex-direction: column;
     height: 100vh; 
     background-color: #333; 
     color: #e00; 
-    text-shadow: 0 0 5px #ff0000; 
+    text-shadow: 0 0 5px #ff0000;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
   }
   #image-container {
-    margin-bottom: 20px;
+    width: 40%;
+    text-align: left;
   }
   img {
     max-width: 100%;
@@ -30,14 +37,26 @@
     padding: 20px; 
     border-radius: 10px; 
     background-color: #111; 
+    width: 40%;
+    text-align: right;
+  }
+  a {
+    color: #fff;
+    text-decoration: underline;
+    font-size: 1.2rem;
+    display: block; /* Makes the link block-level for better positioning */
+    margin-top: 20px;
   }
 </style>
 </head>
 <body>
-<div id="image-container">
-  <img src="image.jpg" alt="Doomsday Image">
-</div>
-<div id="countdown">
+<div class="container">
+  <div id="image-container">
+    <img src="image.jpg" alt="Doomsday Image">
+    <a href="https://docs.google.com/spreadsheets/d/10Z4Q3MovjNxXfMKIandH1X4Ts0Y9kxIQU40ms-Og_74/edit#gid=905490460" target="_blank">View our climate history</a>
+  </div>
+  <div id="countdown">
+  </div>
 </div>
 
 <script>
