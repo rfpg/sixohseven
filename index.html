@@ -12,7 +12,6 @@
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
   }
@@ -21,12 +20,6 @@
     justify-content: space-between;
     align-items: center;
     width: 80%;
-    margin-top: 20px;
-  }
-  #iframe-container {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 20px;
   }
   #image-container {
     width: 40%;
@@ -38,13 +31,29 @@
     border: 2px solid #e00;
     border-radius: 10px;
   }
+  #content-container {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  #iframe-container {
+    width: 100%;
+    text-align: right;
+    margin-bottom: 20px;
+  }
+  iframe {
+    width: 100%;
+    border: 2px solid #e00;
+    border-radius: 10px;
+  }
   #countdown { 
     font-size: 4rem; 
     border: 2px solid #e00; 
     padding: 20px; 
     border-radius: 10px; 
     background-color: #111; 
-    width: 40%;
+    width: 100%;
     text-align: right;
   }
   a {
@@ -58,16 +67,17 @@
 </head>
 <body>
 
-<div id="iframe-container">
-  <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS6be6RSbZz2nLZHEzSOBu3wPEXGvxv7C_k2s0DhkD7kyUhcXxvnfZHDrsmBlyhBRxa0IXQP32kNcBb/pubhtml?widget=true&amp;headers=false" width="800" height="450"></iframe>
-</div>
-
 <div class="container">
   <div id="image-container">
     <img src="image.jpg" alt="Doomsday Image">
     <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vS6be6RSbZz2nLZHEzSOBu3wPEXGvxv7C_k2s0DhkD7kyUhcXxvnfZHDrsmBlyhBRxa0IXQP32kNcBb/pubhtml" target="_blank">View our climate history</a>
   </div>
-  <div id="countdown"></div>
+  <div id="content-container">
+    <div id="iframe-container">
+      <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS6be6RSbZz2nLZHEzSOBu3wPEXGvxv7C_k2s0DhkD7kyUhcXxvnfZHDrsmBlyhBRxa0IXQP32kNcBb/pubhtml?widget=true&amp;headers=false" width="800" height="450"></iframe>
+    </div>
+    <div id="countdown"></div>
+  </div>
 </div>
 
 <script>
